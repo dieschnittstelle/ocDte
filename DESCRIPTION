@@ -1,10 +1,17 @@
 Package: ocDte
-Type: Package
-Title: What the package does (short line)
-Version: 1.0
-Date: 2019-12-05
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Title: Data Transfer Extension for OpenCPU
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Joern",
+           family = "Kreutel",
+           role = c("aut", "cre"),
+           email = "joern.kreutel@beuth-hochschule.de",
+           comment = structure("YOUR-ORCID-ID", .Names = "ORCID"))
+Description: Prepares data transferrable as json objects for usage in cluster, clue etc packages
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Imports:
+	cluster,
+	clue
 RoxygenNote: 7.0.2.9000
