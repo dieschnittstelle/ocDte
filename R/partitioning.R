@@ -4,5 +4,5 @@
 #' @param list the list of values to be partitioned
 #' @param num the number of partitions to create
 partitioning <- function(list=NULL,num=-1) {
-	return(cluster::pam(list,num))
+	p <- cluster::pam(list,num)
 }
