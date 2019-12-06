@@ -7,6 +7,9 @@
 #' @param n2 the number of partitions for p2
 #' @param expr the expression to be evaluated
 evalExprOnPartitionings <- function(p1=NULL,n1=-1,p2=NULL,n2=-1,expr) {
+    library(rlang)
+    library(purrr)
+
 	part1 <- cluster::pam(p1,n1)
 	part2 <- cluster::pam(p2,n2)
 
