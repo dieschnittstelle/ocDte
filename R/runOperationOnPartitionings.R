@@ -1,6 +1,6 @@
 #' Runs operations on partitionings
 #'
-#' allows to specify an operation that will be evaluated, employing two partitioning arguments that will be converted from lists of observations. In openCPU there are currently issues with the lexical scope of eval(), therefore we employ this less dynamic workaround...
+#' allows to specify an operation that will be evaluated, employing two partitioning arguments that will be converted from lists of observations. In openCPU there are currently issues with the lexical scope of eval(), therefore we employ this less dynamic workaround... it finally turns out that this workaround is obsolete: strings must be quoted when passed to openCPU, i.e. we can use the more generic implementation.
 #' @param op the name of the operation
 #' @param p1 the first list of observations
 #' @param n1 the number of partitions for p1
