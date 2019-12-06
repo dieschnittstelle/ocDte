@@ -19,12 +19,12 @@ runOperationOnPartitionings <- function(op=NULL,p1=NULL,n1=-1,p2=NULL,n2=-1,opti
 
 	if (opstr == as.character("clue::cl_dissimilarity")) {
 	    print("run cl_dissimilarity...")
-        result <- clue::cl_dissimilarity(arg1,arg2,ifelse(options != NULL,options[[1]],"euclidean"))
+        result <- clue::cl_dissimilarity(arg1,arg2)#,ifelse(options != NULL,options[[1]],"euclidean"))
 	    print("run cl_dissimilarity: done")
 	}
 	else if (opstr == as.character("clue::cl_agreement")) {
 	    print("run cl_agreement...")
-        result <- clue::cl_agreement(arg1,arg2,ifelse(options != NULL,options[[1]],"euclidean"))
+        result <- clue::cl_agreement(arg1,arg2)#,ifelse(options != NULL,options[[1]],"euclidean"))
 	    print("run cl_agreement: done")
 	}
 	else {
