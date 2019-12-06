@@ -7,7 +7,7 @@
 #' @param p2 the second list of observations
 #' @param n2 the number of partitions for p2
 #' @param expr the expression to be evaluated
-runOperationOnPartitionings <- function(op=Null,p1=NULL,n1=-1,p2=NULL,n2=-1,options=NULL) {
+runOperationOnPartitionings <- function(op=NULL,p1=NULL,n1=-1,p2=NULL,n2=-1,options=NULL) {
 	arg1 <- cluster::pam(p1,n1)
 	arg2 <- cluster::pam(p2,n2)
 
