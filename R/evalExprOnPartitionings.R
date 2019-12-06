@@ -15,5 +15,6 @@ evalExprOnPartitionings <- function(p1=NULL,n1=-1,p2=NULL,n2=-1,expr) {
 
 	result <- eval(parse(text=expr))
 
-    return(TRUE)
+    # TODO: we need to somehow pass information on how to process the result - this here is a solution that only works for distance/similarity measurements
+    return(result[1])
 }
