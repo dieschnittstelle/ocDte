@@ -29,16 +29,10 @@ evalExprOnPartitionings <- function(p1=NULL,n1=-1,p2=NULL,n2=-1,expr,retattrs=NU
     	part2 <- cluster::pam(p2,n2)
 	}
 
-	print(part1)
-	print(part2)
-
 	print("eval...")
 
 	result <- eval(parse(text=expr))
 
-	print(result)
-
-    # TODO: we need to somehow pass information on how to process the result - this here is a solution that only works for distance/similarity measurements
     print("returning result...")
     if (length(retattrs) == 0) {
         print("return first element of result")
