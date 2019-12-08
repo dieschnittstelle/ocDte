@@ -11,6 +11,9 @@ evalExprOnPartitionings <- function(p1=NULL,n1=-1,p2=NULL,n2=-1,expr,retattrs=NU
     library(rlang)
     library(purrr)
 
+    print(n1)
+    print(n2)
+
 	part1 <- ifelse(n1 == -1,p1,cluster::pam(p1,n1))
 	part2 <- ifelse(n2 == -1,p2,cluster::pam(p2,n2))
 
