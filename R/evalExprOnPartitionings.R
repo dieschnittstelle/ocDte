@@ -6,15 +6,25 @@
 #' @param p2 the second list of observations
 #' @param n2 the number of partitions for p2
 #' @param expr the expression to be evaluated
-evalExprOnPartitionings <- function(p1=NULL,n1=-1,p2=NULL,n2=-1,expr) {
+#' @param retattrs the attributes to return from the result object
+evalExprOnPartitionings <- function(p1=NULL,n1=-1,p2=NULL,n2=-1,expr,retattrs=NULL) {
     library(rlang)
     library(purrr)
 
-	part1 <- cluster::pam(p1,n1)
-	part2 <- cluster::pam(p2,n2)
+	part1 <- ifelse(n1 == -1,n1,cluster::pam(p1,n1))
+	part2 <- ifelse(n2 == -1,n2,cluster::pam(p2,n2))
 
 	result <- eval(parse(text=expr))
 
     # TODO: we need to somehow pass information on how to process the result - this here is a solution that only works for distance/similarity measurements
-    return(result[1])
+    if (retattrs == NULL) {
+        return(result[1])
+    }
+    else {
+        retval <- {}
+        for (attr in retattrs) {
+            retval[attr] <- return[attr]
+        }
+        return retval
+    }
 }
