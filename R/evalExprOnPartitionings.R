@@ -11,8 +11,8 @@ evalExprOnPartitionings <- function(p1=NULL,n1=-1,p2=NULL,n2=-1,expr,retattrs=NU
     library(rlang)
     library(purrr)
 
-	part1 <- ifelse(n1 == -1,n1,cluster::pam(p1,n1))
-	part2 <- ifelse(n2 == -1,n2,cluster::pam(p2,n2))
+	part1 <- ifelse(n1 == -1,p1,cluster::pam(p1,n1))
+	part2 <- ifelse(n2 == -1,p2,cluster::pam(p2,n2))
 
 	result <- eval(parse(text=expr))
 
