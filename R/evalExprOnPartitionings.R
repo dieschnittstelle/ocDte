@@ -25,6 +25,6 @@ evalExprOnPartitionings <- function(p1=NULL,n1=-1,p2=NULL,n2=-1,expr,retattrs=NU
         for (attr in retattrs) {
             retval[attr] <- return[attr]
         }
-        return retval
+        return(retval)
     }
 }
