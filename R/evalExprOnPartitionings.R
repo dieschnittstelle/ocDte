@@ -42,7 +42,7 @@ evalExprOnPartitionings <- function(p1=NULL,n1=-1,p2=NULL,n2=-1,expr,retattrs=NU
         print("return specified attributes from result...")
         retval <- {}
         for (attr in 1:length(retattrs)) {
-            retval[attr] <- result[retattrs[attr]]
+            retval[retattrs[attr]] <- result[retattrs[attr]]
         }
         return(retval)
     }
