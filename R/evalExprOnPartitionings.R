@@ -18,8 +18,8 @@ evalExprOnPartitionings <- function(p1=NULL,n1=-1,p2=NULL,n2=-1,expr,retattrs=NU
 #        print(retattrs[attr])
 #    }
 
-	part1 <- NULL
-	part2 <- NULL
+	part1 <- p1
+	part2 <- p2
 	if (n1 != -1) {
 	    print("creating partitioning from p1...")
     	part1 <- cluster::pam(p1,n1)
