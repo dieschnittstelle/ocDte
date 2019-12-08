@@ -25,12 +25,14 @@ evalExprOnPartitionings <- function(p1=NULL,n1=-1,p2=NULL,n2=-1,expr,retattrs=NU
 
     # TODO: we need to somehow pass information on how to process the result - this here is a solution that only works for distance/similarity measurements
     if (retattrs == NULL) {
+        print("return first element of result")
         return(result[1])
     }
     else {
+        print("return specified attributes from result...")
         retval <- {}
         for (attr in 1:length(retattrs)) {
-            retval[attr] <- result[attr]
+            retval[attr] <- result[retattrs[attr]]
         }
         return(retval)
     }
