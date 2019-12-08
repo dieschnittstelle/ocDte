@@ -15,6 +15,10 @@ evalExprOnPartitionings <- function(p1=NULL,n1=-1,p2=NULL,n2=-1,expr,retattrs=NU
     print(n2)
     print(retattrs)
 
+    for (pos in 1:p1) {
+       print(p1[pos])
+    }
+
 	part1 <- ifelse(n1 == -1,p1,cluster::pam(p1,n1))
 	part2 <- ifelse(n2 == -1,p2,cluster::pam(p2,n2))
 
